@@ -1,0 +1,144 @@
+/* Full styles.css content */
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Set up body and font */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+}
+
+/* Style the header */
+header {
+    background-color: #333; /* Dark background for the header */
+    color: white;
+    padding: 1rem 0;
+    width: 100%;
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    z-index: 10; /* Ensure header is above other content */
+}
+
+.header-container {
+    width: 80%;
+    margin: 0 auto; /* Center the header content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.portfolio-name {
+    color: white;
+    margin: 0;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px; /* Spacing between navigation items */
+}
+
+.navbar li {
+    margin-left: 2rem; /* Spacing between navigation items */
+}
+
+.navbar a {
+    color: white;
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold font weight */
+}
+
+/* Style the hero section */
+.hero {
+    background-image: url(./assets/Images/2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: calc(30vh - 60px); /* Subtract the height of the fixed header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Relative position for the subtitle */
+    padding-top: 60px; /* Push content down by the header height */
+}
+
+.hero-subtitle {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 5px; /* Rounded corners for the subtitle background */
+    font-size: 1.5rem;
+}
+
+/* Style the About Me section */
+.about-section {
+    background-color: #f0f2f5;
+    padding: 4rem 0;
+    color: #333;
+}
+/* styles.css */
+
+/* ... existing styles ... */
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    padding: 4rem 0; /* Padding top and bottom */
+}
+
+.about-title {
+    flex: 0 0 auto; /* Don't grow, don't shrink, initial basis auto */
+    margin-right: 2rem; /* Margin to the right of the title */
+    font-size: 3.5rem; /* Large font size for the heading */
+    /* Rest of your styles for about-title */
+}
+
+.about-divider {
+    flex: 0 0 2px; /* Divider width */
+    height: 50px; /* Adjust to fit your design */
+    background-color: #4f5fab; /* The color you provided earlier */
+    margin-right: 2rem; /* Margin to the right of the divider */
+}
+
+.about-content {
+    flex: 1; /* Grow to fill the remaining space */
+    /* Rest of your styles for about-content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-title,
+    .about-divider,
+    .about-content {
+        margin-right: 0;
+        margin-bottom: 1rem; /* Add some space below each item */
+    }
+
+    .about-divider {
+        height: 2px; /* Change to a horizontal line */
+        width: 50%; /* Adjust to fit your design */
+        margin-left: auto; /* Center the line horizontally */
+        margin-right: auto; /* Center the line horizontally */
+    }
+}
+
+/* ... additional styles ... */
