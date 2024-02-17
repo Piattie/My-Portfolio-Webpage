@@ -24,8 +24,19 @@ body, html {
     color: var(--text-color);
     line-height: 1.6;
 }
+/* -------------------------------Portfolio title styling---------------------------------------------------------*/
+.portfolio-name {
+    color: var(--white-color);
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
 
-/* Header styles */
+.portfolio-name:hover, .portfolio-name:focus {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* -------------------------------Header styles---------------------------------------------------------*/
 header {
     background-color: var(--primary-color);
     color: var(--white-color);
@@ -44,6 +55,8 @@ header {
     align-items: center;
 }
 
+/* -------------------------------Navigation links styling---------------------------------------------------------*/
+
 .navbar ul {
     display: flex;
     gap: 20px;
@@ -53,7 +66,6 @@ header {
     margin-left: 2rem;
 }
 
-/* Navigation links styling */
 .navbar a {
     color: var(--white-color);
     text-transform: uppercase;
@@ -83,19 +95,7 @@ header {
     width: 100%;
 }
 
-/* Portfolio title styling */
-.portfolio-name {
-    color: var(--white-color);
-    cursor: pointer;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.portfolio-name:hover, .portfolio-name:focus {
-    color: var(--secondary-color);
-    transform: scale(1.1);
-}
-
-/* Hero section styling */
+/* -------------------------------Hero section styling---------------------------------------------------------*/
 .hero {
     background-image: url(./assets/Images/2.jpg);
     background-size: cover;
@@ -121,114 +121,181 @@ header {
     border-radius: 5px;
     font-size: 1.5rem;
 }
-
-/* About Me section styling */
+/* -------------------------------About Me section styling---------------------------------------------------------*/
 .about-section {
     background-color: var(--background-color);
-    padding: 4rem 0;
+    padding: 2rem 0;
     color: var(--text-color);
 }
 
 .container {
     max-width: 1140px;
     margin: auto;
+    padding-left: 20px; /* Adjust left padding to match About Me section */
+    padding-right: 20px; /* Adjust right padding to match About Me section */
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row; /* Ensure that items are laid out in a row */
+    align-items: flex-start; /* Align items to the start of the flex direction */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .about-title {
-    text-align: center;
-    margin-top: 2rem; /* Add more space above the title if needed */
     font-size: 2rem;
     color: var(--text-color);
     font-weight: bold;
-    border-right: 3px solid var(--primary-color);
-    padding-right: 30px;
-    margin-right: 20px;
+    padding-right: 20px;
+    margin-right: 10px;
+    flex: 0 1 auto; /* Do not grow, but allow it to shrink if necessary */
+    display: flex; /* Use flexbox to align text */
+    align-items: center; /* Align text vertically */
+    height: 100%; /* Make the title container full height */
+    text-align: left; /* Align text to the left */
+    white-space: nowrap; /* Prevent the title from wrapping */
 }
 
 .about-content {
-    flex: 1;
+    flex: 1; /* Take up the remaining space */
     padding: 0 2rem;
-    max-width: 600px;
+    border-left: 3px solid var(--primary-color);
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    max-width: auto; /* Adjust this to match the desired width of the paragraph content */
+
 }
 
 .about-content p {
     font-size: 1rem;
     line-height: 1.6;
-    text-align: left;
     margin-bottom: 1rem;
+    margin-left: 20px;
+    text-align: left; /* Align text to the left */
+
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
-    .header-container, .container {
+    .container {
         flex-direction: column;
-        text-align: center;
+        align-items: stretch; /* Stretch items to fill the width on smaller screens */
     }
 
-    .about-title, .about-content {
+    .about-title {
         text-align: center;
+        margin-right: 0;
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: 1rem; /* Add some space below the title */
+    }
+
+    .about-content {
+        text-align: center;
+        padding: 0;
     }
 }
 
-/* Projects section styling */
+/* -------------------------------Projects section styling---------------------------------------------------------*/
+
 .projects-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 2rem;
+    background-color: var(--background-color); 
+    padding: 2rem 0; /* Vertical padding to match About Me section */
+    color: var(--text-color);
 }
 
-.projects-header {
-    text-align: right; /* Align the text to the center for consistency */
-    margin-top: 2rem; /* Add more space above the header if needed */
-    font-size: 1.5rem; /* Make the font size larger to stand out */
-    /* Rest of your styles */
+.container {
+    max-width: 1140px; /* This should be the same max-width as your About Me section */
+    margin: auto; /* Center the container */
+    display: flex;
+    flex-direction: row; /* Ensure that items are laid out in a row */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Section title */
+.Projects-title {
+    font-size: 2rem; /* Title font size */
     color: var(--text-color);
     font-weight: bold;
-    border-right: 3px solid var(--primary-color);
-    padding-right: 30px;
-    margin-right: 390px;
+    text-align: left; /* Center align the title */
+    margin-bottom: 2rem; /* Space between the title and the projects */
+    padding-right: 20px;
+    margin-right: 10px;
+    display: flex; /* Use flexbox to align text */
+    align-items: center; /* Align text vertically */
+    height: 100%; /* Make the title container full height */
+    text-align: left; /* Align text to the left */
+    white-space: nowrap; /* Prevent the title from wrapping */
+    
 }
 
-.projects-container {
+/* Projects grid container */
+.projects-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 2rem; /* Space between grid items */
+    justify-items: center; /* Center grid items horizontally */
+    flex: 1; /* Take up the remaining space */
+    padding: 0 20px;
+    border-left: 3px solid var(--primary-color);
+    text-align: left; /* Align text to the left */
+    flex-direction: column; /* Stack content vertically */
+    max-width: auto; /* Adjust this to match the desired width of the paragraph content */
 }
 
+/* Individual project styling */
 .project {
     text-align: center;
     background: var(--white-color);
     border-radius: 8px;
     overflow: hidden;
-    transition: box-shadow 0.3s;
-}
-
-.project:hover {
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
 }
 
 .project img {
     width: 100%;
-    height: 200px;
+    height: auto;
     object-fit: cover;
 }
 
-.project-title {
+.project-subtitle {
     color: var(--text-color);
-    margin: 0.5rem;
-    transition: color 0.3s, transform 0.3s;
+    margin: 1rem 0;
 }
 
-.project-title:hover {
+.project-subtitle:hover {
     color: var(--secondary-color);
-    transform: scale(1.1);
-    cursor: pointer;
+    transform: scale(1.05);
 }
 
-/* Contact Me Section styling */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .Projects-title {
+        text-align: center;
+        padding-right: 0;
+        flex: 1 100%; /* Full width on mobile */
+    }
+
+    .projects-content {
+        grid-template-columns: 1fr;
+        padding: 0;
+        border-left: none; /* Remove border for mobile layout */
+    }
+
+    .project-subtitle {
+        font-size: 1.2rem; /* Adjust font size for mobile if needed */
+    }
+}
+
+
+/* -------------------------------Contact Me section styling---------------------------------------------------------*/
+
 .contact-section {
     color: var(--white-color);
     padding: 1rem 0;
@@ -285,3 +352,41 @@ header {
     cursor: pointer;
     position: relative;
 }
+
+/* -------------------------------Footer styling---------------------------------------------------------*/
+footer {
+    background-color: var(--white-colorr); /* Using the primary color variable for consistency */
+    color: var(--black-color); /* Using the white color variable for text */
+    padding: 10PX 0; /* Top and bottom padding */
+    text-align: center; /* Center align the text */
+}
+
+.footer-container {
+    max-width: 1140px; /* Consistent with the container width */
+    margin: auto; /* Centering the container */
+}
+
+footer p {
+    font-size: 1rem; /* Adjust the font size as needed */
+    margin: 0; /* Removing any default margin */
+}
+
+/* -------------------------------Back to Top Link styling---------------------------------------------------------*/
+.back-to-top {
+    display: block; /* Make the link a block element */
+    width: max-content; /* Adjust width to content */
+    margin: 10PX auto; /* Center the link and add margin around it */
+    padding: 10PX 1rem; /* Padding for better touch area */
+    background-color: var(--secondary-color); /* Secondary color for visibility */
+    color: var(--black-color); /* Black color for the text */
+    text-align: center; /* Center the text */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.back-to-top:hover, .back-to-top:focus {
+    background-color: var(--primary-color); /* Change background on hover/focus */
+    color: var(--white-color); /* Change text color on hover/focus */
+}
+
