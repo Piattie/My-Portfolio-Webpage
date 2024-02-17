@@ -10,7 +10,7 @@
 }
 
 /* Reset default styles */
-body, h1, h2, h3, p, ul, li, a {
+body, h1, h2, h3, h4, p, ul, li, a {
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -21,6 +21,8 @@ body, h1, h2, h3, p, ul, li, a {
 body, html {
     font-family: var(--font-main);
     background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 /* Header styles */
@@ -74,6 +76,7 @@ header {
 
 .navbar a:hover, .navbar a:focus {
     color: var(--secondary-color);
+    transform: scale(1.05);
 }
 
 .navbar a:hover::after, .navbar a:focus::after {
@@ -134,30 +137,14 @@ header {
 }
 
 .about-title {
-    text-align: left;
+    text-align: center;
+    margin-top: 2rem; /* Add more space above the title if needed */
+    font-size: 2rem;
     color: var(--text-color);
     font-weight: bold;
     border-right: 3px solid var(--primary-color);
     padding-right: 30px;
     margin-right: 20px;
-}
-
-.about-title h2 {
-    border-left: 5px solid var(--primary-color);
-    padding-left: 20px;
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-}
-
-.title-underline {
-    display: block;
-    width: 60%;
-    height: 4px;
-    background-color: var(--primary-color);
-    margin-top: 0.5rem;
-    margin-bottom: 2rem;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .about-content {
@@ -188,31 +175,39 @@ header {
 /* Projects section styling */
 .projects-section {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
     padding: 2rem;
 }
 
 .projects-header {
-    text-align: left;
+    text-align: right; /* Align the text to the center for consistency */
+    margin-top: 2rem; /* Add more space above the header if needed */
+    font-size: 1.5rem; /* Make the font size larger to stand out */
+    /* Rest of your styles */
     color: var(--text-color);
     font-weight: bold;
     border-right: 3px solid var(--primary-color);
     padding-right: 30px;
-    margin-right: 20px;
+    margin-right: 390px;
 }
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
 }
 
 .project {
     text-align: center;
-    background: #f9f9f9;
+    background: var(--white-color);
     border-radius: 8px;
     overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.project:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project img {
@@ -233,25 +228,20 @@ header {
     cursor: pointer;
 }
 
-/* Responsive design for projects section */
-@media (max-width: 800px) {
-    .projects-section, .projects-container {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Contact Me Section styling */
 .contact-section {
     color: var(--white-color);
     padding: 1rem 0;
-    width: 100%;
     position: flex;
     top: 0;
     z-index: 10;
 }
 
 .contact-title {
-    text-align: left;
+    text-align: center; /* Align the text to the center for consistency */
+    margin-top: 2rem; /* Add more space above the header if needed */
+    font-size: 2rem; /* Make the font size larger to stand out */
+    /* Rest of your styles */
     color: var(--text-color);
     font-weight: bold;
     border-right: 3px solid var(--primary-color);
@@ -291,7 +281,6 @@ header {
     color: var(--primary-color);
     text-decoration: underline;
     text-decoration-color: var(--secondary-color);
-    transition: width 0.3s;
     transform: scale(1.1);
     cursor: pointer;
     position: relative;
