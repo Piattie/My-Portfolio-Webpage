@@ -33,7 +33,7 @@ Attention has been paid to making the website accessible, including alt text for
 
 ---
 
-This description provides a concise overview of the website's content and features, emphasizing its design, structure, and the technologies used. Feel free to adjust or expand upon it as needed for your README file.
+This description provides a concise overview of the website's content and features, emphasizing its design, structure, and the technologies used.
 
 ## Screenshot
 [Piattie's Portfolio Website Screenshot](./assets/Images/My-Portfolio-Webpage-Snapshot.GIF)
