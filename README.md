@@ -39,5 +39,4 @@ This description provides a concise overview of the website's content and featur
 [Piattie's Portfolio Website Screenshot](./assets/Images/My-Portfolio-Webpage-Snapshot.GIF)
 
 ## Live Site
-[Visit the live site](https://piattie.github.io/My-Portfolio-Webpage/)
- 
+[Visit the live site](https://piattie.github.io/Piattie-Portfolio-Webpage/)
